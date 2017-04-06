@@ -12,10 +12,11 @@ public:
 	FlyweightFactory();
 	~FlyweightFactory();
 	Flyweight* GetFlyweight(const string& key);
+	void GetFlyweightCount();
 protected:
 private:
 	// object pool
-	vector<Flyweight*> _fly;
+	vector<Flyweight*> _pool;
 };
 
 #endif

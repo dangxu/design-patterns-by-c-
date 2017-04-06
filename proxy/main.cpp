@@ -8,5 +8,7 @@ int main(int argc,char* argv[])
 	Subject* sub = new ConcreteSubject();
 	Proxy* p = new Proxy(sub);
 	p->request();
+	delete p;
+	delete sub;
 	return 0;
 }

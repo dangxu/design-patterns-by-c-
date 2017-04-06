@@ -5,12 +5,12 @@
 
 int main(int argc, char **argv)
 {
-	//Inheritance Implement
+	//Inheritance Adapter Implement
 	Adapter *adp = new Adapter();
 	adp->request();
 	delete adp;
 
-    //Composition Implement
+        //Composition Adapter Implement
 	Adaptee *adpe = new Adaptee();
 	Adapter2 *adpt = new Adapter2(adpe);
 	adpt->request();

@@ -32,9 +32,12 @@ void Composite::add(Component* cmp)
 void Composite::remove(Component* cmp)
 {
 	vector<Component*>::iterator it = _comVec.begin();
-	for (; it !=_comVec.end(); ++it) {
+	for (; it !=_comVec.end();) {
 		if (*it == cmp) {
-		    _comVec.erase(it);
+		    it = _comVec.erase(it);
+		}
+		else {
+			++it;
 		}
 	}
 }

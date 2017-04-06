@@ -6,5 +6,6 @@ int main(int argc,char* argv[])
 {
 	Facade* f = new Facade();
 	f->operationWrapper();
+	delete f;
 	return 0;
 }

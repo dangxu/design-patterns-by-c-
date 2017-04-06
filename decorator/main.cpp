@@ -3,8 +3,9 @@
 
 int main(int argc, char **argv)
 {
-	Component *cmp = new ConcreteComponent();
-	Decorator *dec = new ConcreteDecorator(cmp);
+	Component *cmp = new ConcreteComponent();//original function
+	cmp->operation();
+	Decorator *dec = new ConcreteDecorator(cmp);//add new function to object *cmp
 	dec->operation();
 	delete cmp;
 	delete dec;

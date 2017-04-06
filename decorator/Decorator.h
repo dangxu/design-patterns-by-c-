@@ -1,15 +1,13 @@
 #pragma once
 #include "component.h"
 
-//×°ÊÎ»ùÀà
-// 1.inherit from Component
+// Decorator inherit original interface from Component
 class Decorator : public Component
 {
 public:
 	Decorator(Component *cmp);
 	~Decorator(void);
-	virtual void operation();
+	virtual void operation();//inherit original interface
 protected:
-	// 2.have a member of Component
-	Component *_cmp;
+	Component *_cmp;//which object to be decorated
 };

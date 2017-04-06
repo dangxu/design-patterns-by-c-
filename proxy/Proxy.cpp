@@ -34,7 +34,10 @@ Proxy::Proxy(Subject* sub)
 
 Proxy::~Proxy()
 {
-	delete _sub;
+        if(!_sub) {
+            delete _sub;
+            _sub = NULL;
+        }
 }
 
 void Proxy::request()

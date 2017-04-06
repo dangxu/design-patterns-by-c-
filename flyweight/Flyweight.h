@@ -16,14 +16,21 @@ private:
 	string _intrinsicState;
 };
 
-class ConcreteFlyweight:public Flyweight
+class ConcreteFlyweight : public Flyweight
 {
 public:
 	ConcreteFlyweight(string intrinsicState);
 	~ConcreteFlyweight();
 	void Operation(const string& extrinsicState);
-protected:
-private:
 };
 
+/*
+class UnsharedConcreteFlyweight : public Flyweight
+{
+public:
+	UnsharedConcreteFlyweight(string intrinsicState);
+	~UnsharedConcreteFlyweight();
+	virtual void Operation(const string& extrinsicState);
+};
+*/
 #endif
