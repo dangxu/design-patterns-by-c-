@@ -4,9 +4,12 @@ using namespace std;
 
 int main(int argc,char* argv[])
 {
-	AbstractClass* p1 = new ConcreteClass1();
-	AbstractClass* p2 = new ConcreteClass2();
-	p1->templateMethod();
-	p2->templateMethod();
+	TemplateClass* p1 = new ConcreteTemplateA();
+	p1->algrithmInterface();
+	delete p1;
+
+	TemplateClass* p2 = new ConcreteTemplateB();
+	p2->algrithmInterface();
+	delete p2;
 	return 0;
 }

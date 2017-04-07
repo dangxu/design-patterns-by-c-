@@ -2,52 +2,52 @@
 #include <iostream>
 using namespace std;
 
-AbstractClass::AbstractClass()
+TemplateClass::TemplateClass()
 {
 }
 
-AbstractClass::~AbstractClass()
+TemplateClass::~TemplateClass()
 {
 }
 
-void AbstractClass::templateMethod()
+void TemplateClass::algrithmInterface()
 {
-	this->primitiveOperation1();
-	this->primitiveOperation2();
+	this->algrithmOperation1();
+	this->algrithmOperation2();
 }
 
-ConcreteClass1::ConcreteClass1()
-{
-}
-
-ConcreteClass1::~ConcreteClass1()
+ConcreteTemplateA::ConcreteTemplateA()
 {
 }
 
-void ConcreteClass1::primitiveOperation1()
-{
-	cout<<"ConcreteClass1...primitiveOperation1"<<endl;
-}
-
-void ConcreteClass1::primitiveOperation2()
-{
-	cout<<"ConcreteClass1...primitiveOperation2"<<endl;
-}
-
-ConcreteClass2::ConcreteClass2()
+ConcreteTemplateA::~ConcreteTemplateA()
 {
 }
 
-ConcreteClass2::~ConcreteClass2()
+void ConcreteTemplateA::algrithmOperation1()
+{
+	cout<<"ConcreteTemplateA::algrithmOperation1"<<endl;
+}
+
+void ConcreteTemplateA::algrithmOperation2()
+{
+	cout<<"ConcreteTemplateA::algrithmOperation2"<<endl;
+}
+
+ConcreteTemplateB::ConcreteTemplateB()
 {
 }
 
-void ConcreteClass2::primitiveOperation1()
+ConcreteTemplateB::~ConcreteTemplateB()
 {
-	cout<<"ConcreteClass2...primitiveOperation1"<<endl;
 }
 
-void ConcreteClass2::primitiveOperation2()
+void ConcreteTemplateB::algrithmOperation1()
 {
-	cout<<"ConcreteClass2...primitiveOperation2"<<endl;
+	cout<<"ConcreteTemplateB::algrithmOperation1"<<endl;
+}
+
+void ConcreteTemplateB::algrithmOperation2()
+{
+	cout<<"ConcreteTemplateB::algrithmOperation2"<<endl;
 }

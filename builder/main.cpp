@@ -4,9 +4,10 @@
 #include <iostream>
 using namespace std;
 
-int main (int argc, const char * argv[]) {
+int main (int argc, const char * argv[])
+{
 
-	Director* d = new Director(new ConcreteBuilder());
-	d->Construct();
-	return 0;
+    Director* d = new Director(new ConcreteBuilder());
+    d->Construct();
+    return 0;
 }

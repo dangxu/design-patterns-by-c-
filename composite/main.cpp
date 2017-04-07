@@ -18,8 +18,8 @@ int main(int argc, char **argv)
     pCom->add(pLeaf2);
     pRoot->add(pCom);
 
-	// recursive call all sub-nod's operation
+    // recursive call all sub-nod's operation
     pRoot->operation();
-	delete pRoot;
+    delete pRoot;
     return 0;
 }

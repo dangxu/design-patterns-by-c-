@@ -6,18 +6,19 @@ Caretaker::Caretaker()
 
 Caretaker::~Caretaker()
 {
-	if (_memento) {
-		delete _memento;
-		_memento = NULL;
-	}
+    if (_memento)
+    {
+        delete _memento;
+        _memento = NULL;
+    }
 }
 
 Memento* Caretaker::getMemento()
 {
-	return this->_memento;
+    return this->_memento;
 }
 
 void Caretaker::setMemento(Memento* pMemento)
 {
-	this->_memento = pMemento;
+    this->_memento = pMemento;
 }

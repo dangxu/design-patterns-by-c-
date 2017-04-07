@@ -4,14 +4,14 @@
 class Strategy
 {
 public:
-	Strategy();
 	virtual ~Strategy();
 	virtual void algrithmInterface() = 0;
 protected:
+	Strategy();
 private:
 };
 
-class ConcreteStrategyA:public Strategy
+class ConcreteStrategyA : public Strategy
 {
 public:
 	ConcreteStrategyA();
@@ -21,7 +21,7 @@ protected:
 private:
 };
 
-class ConcreteStrategyB:public Strategy
+class ConcreteStrategyB : public Strategy
 {
 public:
 	ConcreteStrategyB();

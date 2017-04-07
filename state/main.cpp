@@ -1,27 +1,25 @@
 //main.cpp
-#include "Context.h"
+#include "StateMachine.h"
 #include "State.h"
 #include <iostream>
 using namespace std;
 
 int main(int argc,char* argv[])
 {
-	State* st = NULL;//state details
-	Context* con = NULL;//record current state
+	State* st = NULL;
+	StateMachine* sm = NULL;
 	st = new ConcreteStateA();
-	con = new Context(st);//current state is StateA
-	con->OprationInterface();//operation of StateA
-	con->OperationChangState();//then change to another state, here to state StateB
-	con->OprationInterface();//operation of StateB
-	delete st;
-    delete con;
+	sm = new StateMachine(st);
+	sm->opration();//operation of StateA
+	sm->changState();//then change to another state, here to state StateB
+	sm->opration();//operation of StateB
+	delete sm;
 
     st = new ConcreteStateB();
-	con = new Context(st);//current state is StateB
-	con->OprationInterface();//operation of StateB
-	con->OperationChangState();//then change to another state, here to state StateA
-	con->OprationInterface();//operation of StateA
-	delete st;
-	delete con;
+	sm = new StateMachine(st);
+	sm->opration();//operation of StateB
+	sm->changState();//then change to another state, here to state StateA
+	sm->opration();//operation of StateA
+	delete sm;
 	return 0;
 }

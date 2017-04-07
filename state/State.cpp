@@ -1,6 +1,6 @@
 //State.cpp
 #include "State.h"
-#include "Context.h"
+#include "StateMachine.h"
 #include <iostream>
 using namespace std;
 
@@ -12,18 +12,17 @@ State::~State()
 {
 }
 
-void State::OperationInterface(Context* con)
-{
-	cout<<"State::.."<<endl;
-}
-
-void State::OperationChangeState(Context* con)
+void State::operation(StateMachine* sm)
 {
 }
 
-bool State::ChangeState(Context* con, State* st)
+void State::changeState(StateMachine* sm)
 {
-	con->ChangeState(st);
+}
+
+bool State::changeState(StateMachine* sm, State* st)
+{
+	sm->changeState(st);
 	return true;
 }
 
@@ -35,15 +34,14 @@ ConcreteStateA::~ConcreteStateA()
 {
 }
 
-void ConcreteStateA::OperationInterface(Context* con)
+void ConcreteStateA::operation(StateMachine* sm)
 {
-	cout<<"ConcreteStateA::OperationInterface......"<<endl;
+	cout<<"ConcreteStateA::operation"<<endl;
 }
 
-void ConcreteStateA::OperationChangeState(Context* con)
+void ConcreteStateA::changeState(StateMachine* sm)
 {
-	cout<<"Change State To ConcreteStateB......"<<endl;
-	this->ChangeState(con, new ConcreteStateB());
+	State::changeState(sm, new ConcreteStateB());
 }
 
 ConcreteStateB::ConcreteStateB()
@@ -54,13 +52,12 @@ ConcreteStateB::~ConcreteStateB()
 {
 }
 
-void ConcreteStateB::OperationInterface(Context* con)
+void ConcreteStateB::operation(StateMachine* sm)
 {
-	cout<<"ConcreteStateB::OperationInterface......"<<endl;
+	cout<<"ConcreteStateB::operation"<<endl;
 }
 
-void ConcreteStateB::OperationChangeState(Context* con)
+void ConcreteStateB::changeState(StateMachine* sm)
 {
-	cout<<"Change State To ConcreteStateA......"<<endl;
-	this->ChangeState(con, new ConcreteStateA());
+	State::changeState(sm, new ConcreteStateA());
 }

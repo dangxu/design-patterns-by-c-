@@ -1,41 +1,41 @@
 #ifndef _TEMPLATE_H_
 #define _TEMPLATE_H_
 
-class AbstractClass
+class TemplateClass
 {
 public:
-	virtual ~AbstractClass();
+	virtual ~TemplateClass();
 	//algorithm interface
-	void templateMethod();
+	void algrithmInterface();
 protected:
-	// algorithm implement
-	virtual void primitiveOperation1() = 0;
-	virtual void primitiveOperation2() = 0;
-	AbstractClass();
+	TemplateClass();
+	//algorithm details
+	virtual void algrithmOperation1() = 0;
+	virtual void algrithmOperation2() = 0;
 private:
 };
 
-class ConcreteClass1:public AbstractClass
+class ConcreteTemplateA : public TemplateClass
 {
 public:
-	ConcreteClass1();
-	~ConcreteClass1();
+	ConcreteTemplateA();
+	~ConcreteTemplateA();
 protected:
 	// algorithm implement details
-	void primitiveOperation1();
-	void primitiveOperation2();
+	void algrithmOperation1();
+	void algrithmOperation2();
 private:
 };
 
-class ConcreteClass2:public AbstractClass
+class ConcreteTemplateB : public TemplateClass
 {
 public:
-	ConcreteClass2();
-	~ConcreteClass2();
+	ConcreteTemplateB();
+	~ConcreteTemplateB();
 protected:
 	// algorithm implement details
-	void primitiveOperation1();
-	void primitiveOperation2();
+	void algrithmOperation1();
+	void algrithmOperation2();
 private:
 };
 
