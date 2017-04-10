@@ -43,10 +43,9 @@ public:
 		(_rev->*_act)();
 	}
 
-	~SimpleCommand()
-	{
-		delete _rev;
-	}
+    ~SimpleCommand()
+    {
+    }
 protected:
 private:
 	Receiver* _rev;

@@ -4,22 +4,22 @@
 using namespace std;
 class Memento;
 
-//original data
+//who's state to be memo
 class Originator
 {
 public:
-	Originator();
-	Originator(const string& state);
-	~Originator();
-	// recover state by Memento
-	void restoreToMemento(Memento* pMemento);
-	Memento* createMemento();
-	void setState(const string& state);
-	string getState();
-	void show();
+    Originator();
+    Originator(const string& state);
+    ~Originator();
+    // recover state by Memento
+    void restoreToMemento(Memento* pMemento);
+    Memento* createMemento();
+    void setState(const string& state);
+    string getState();
+    void show();
 protected:
 private:
-	string _state;
+    string _state;
 };
 
 #endif

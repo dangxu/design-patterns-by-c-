@@ -13,6 +13,7 @@ int main()
 	pSubject->attach(p1);
 	pSubject->attach(p2);
 	pSubject->attach(p3);
+
 	pSubject->setState("old");//update subject
 	pSubject->notify();//synchronize with subject's observer
 	pSubject->setState("new");//update subject
@@ -20,5 +21,10 @@ int main()
 	pSubject->setState("hello");//update subject
 	pSubject->detach(p3);//remove a observer
 	pSubject->notify();//synchronize with subject's observer
+
+	delete p1;
+	delete p2;
+	delete p3;
+	delete pSubject;
 	return 0;
 }

@@ -2,16 +2,16 @@
 #define _CARETAKER_H_
 
 class Memento;
-// to store last memo
+// to provide method of memo
 class Caretaker
 {
 public:
-	Caretaker();
-	~Caretaker();
-	void setMemento(Memento*);
-	Memento* getMemento();
+    Caretaker();
+    ~Caretaker();
+    void setMemento(Memento*);
+    Memento* getMemento();
 private:
-	Memento* _memento;
+    Memento* _memento;
 };
 
 #endif

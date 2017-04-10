@@ -11,19 +11,19 @@ class Element;
 class Visitor
 {
 public:
-	virtual void Visit( Element *element ){};
+    virtual void visit( Element *element ) {};
 };
 
 class IncomeVisitor : public Visitor
 {
 public:
-	virtual void Visit( Element *element );
+    virtual void visit( Element *element );
 };
 
 class VacationVisitor : public Visitor
 {
 public:
-	virtual void Visit( Element *element );
+    virtual void visit( Element *element );
 };
 
 #endif //~_VISITOR_H_
