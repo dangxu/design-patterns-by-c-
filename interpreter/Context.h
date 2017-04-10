@@ -5,8 +5,8 @@
 class Context
 {
 public:
-	Context();
-	~Context();
+    Context();
+    ~Context();
 protected:
 private:
 };

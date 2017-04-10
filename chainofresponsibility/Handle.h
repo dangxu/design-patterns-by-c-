@@ -7,8 +7,8 @@ class Handle
 public:
 	virtual ~Handle();
 	virtual void handleRequest() = 0;
-	void setSuccessor(Handle* succ);
-	Handle* getSuccessor();
+	void setHandler  (Handle* succ);
+	Handle* getHandler();
 protected:
 	Handle();
 	Handle(Handle* succ);

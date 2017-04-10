@@ -3,48 +3,48 @@
 #include <iostream>
 using namespace std;
 
-AbstractExpression::AbstractExpression()
+Interpreter::Interpreter()
 {
 }
 
-AbstractExpression::~AbstractExpression()
+Interpreter::~Interpreter()
 {
 }
 
-void AbstractExpression::interpret(const Context& c)
+void Interpreter::interpret(const Context& c)
 {
 }
 
 //
-TerminalExpression::TerminalExpression(const string& statement)
+TerminalInterpreter::TerminalInterpreter(const string& statement)
 {
 	this->_statement = statement;
 }
 
-TerminalExpression::~TerminalExpression()
+TerminalInterpreter::~TerminalInterpreter()
 {
 }
 
-void TerminalExpression::interpret(const Context& c)
+void TerminalInterpreter::interpret(const Context& c)
 {
 	cout<<this->_statement<<" TerminalExpression"<<endl;
 }
 
 //
-NonterminalExpression::NonterminalExpression(AbstractExpression* expression,int times)
+NoTerminalInterpreter::NoTerminalInterpreter(Interpreter* expression,int times)
 {
-	this->_expression = expression;
+	this->_interpreter = expression;
 	this->_times = times;
 }
 
-NonterminalExpression::~NonterminalExpression()
+NoTerminalInterpreter::~NoTerminalInterpreter()
 {
 }
 
-void NonterminalExpression::interpret(const Context& c)
+void NoTerminalInterpreter::interpret(const Context& c)
 {
 	for (int i = 0; i < _times ; i++)
 	{
-		this->_expression->interpret(c);
+		this->_interpreter->interpret(c);
 	}
 }
