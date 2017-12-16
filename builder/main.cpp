@@ -6,8 +6,11 @@ using namespace std;
 
 int main (int argc, const char * argv[])
 {
-
-    Director* d = new Director(new ConcreteBuilder());
+    Builder *b = new ConcreteBuilder();
+    Director *d = new Director(b);
     d->Construct();
+    d->GetProduct();
+    delete d;
+    delete b;
     return 0;
 }

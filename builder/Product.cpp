@@ -5,29 +5,20 @@ using namespace std;
 
 Product::Product()
 {
-	ProducePart();
-	cout<<"return a product"<<endl;
+    _productPartList.clear();
 }
 
 Product::~Product()
 {
+    std::list<ProductPart*>::iterator it = _productPartList.begin();
+    for(; it != _productPartList.end(); ++it)
+    {
+        if(*it)
+            delete *it;
+    }
 }
 
-void Product::ProducePart()
+void Product::addProducePart(ProductPart* part)
 {
-	cout<<"build part of product.."<<endl;
-}
-
-ProductPart::ProductPart()
-{
-	//cout<<"build productpart.."<<endl;
-}
-
-ProductPart::~ProductPart()
-{
-}
-
-ProductPart* ProductPart::BuildPart()
-{
-	return new ProductPart;
+    _productPartList.push_back(part);  
 }

@@ -4,10 +4,11 @@
 using namespace std;
 //Singleton* Singleton::_instance = 0;
 
-Singleton::Singleton()
+template<class T>
+Singleton<T>::Singleton()
 {
-	cout<<"Singleton...."<<endl;
 }
+
 /*
 //implement 1
 Singleton* Singleton::Instance()
@@ -19,9 +20,3 @@ Singleton* Singleton::Instance()
 	return _instance;
 }
 */
-//implement 2
-Singleton* Singleton::Instance()
-{
-	static Singleton instance = Singleton();
-	return &instance;
-}

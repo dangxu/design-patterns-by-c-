@@ -4,7 +4,7 @@
 using namespace std;
 int main(int argc,char* argv[])
 {
-	Singleton* sgn1 = Singleton::Instance();
-	Singleton* sgn2 = Singleton::Instance();
+	Singleton<int>::instance();
+	Singleton<char>::instance();
 	return 0;
 }

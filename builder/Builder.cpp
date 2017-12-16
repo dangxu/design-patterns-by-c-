@@ -1,44 +1,28 @@
 //Builder.cpp
+#include <iostream>
 #include "Builder.h"
 #include "Product.h"
-#include <iostream>
 using namespace std;
 
-Builder::Builder()
+ConcreteBuilder::ConcreteBuilder() : _product(NULL)
 {
-}
-
-Builder::~Builder()
-{
-}
-
-ConcreteBuilder::ConcreteBuilder()
-{
+	_product = new Product();
 }
 
 ConcreteBuilder::~ConcreteBuilder()
 {
+	if(_product)
+		delete _product;
 }
 
-void ConcreteBuilder::BuildPartA(const string& buildPara)
+void ConcreteBuilder::BuildPart()
 {
-	cout<<"Step1:BuildPartA..."<<buildPara<<endl;
-}
-
-void ConcreteBuilder::BuildPartB(const string& buildPara)
-{
-	cout<<"Step2:BuildPartB..."<<buildPara<<endl;
-}
-
-void ConcreteBuilder::BuildPartC(const string& buildPara)
-{
-	cout<<"Step3:BuildPartC..."<<buildPara<<endl;
+    _buildPart<ProductPartA>();
+    _buildPart<ProductPartB>();
+    _buildPart<ProductPartC>();
 }
 
 Product* ConcreteBuilder::GetProduct()
 {
-	BuildPartA("pre-defined");
-	BuildPartB("pre-defined");
-	BuildPartC("pre-defined");
-	return new Product();
+	return _product;
 }

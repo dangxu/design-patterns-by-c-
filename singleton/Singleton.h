@@ -18,10 +18,15 @@ private:
 */
 
 //implement 2
+template <class T>
 class Singleton
 {
 public:
-	static Singleton* Instance();
+	static T& instance()
+    {
+        static T inst;
+	    return inst;
+    }   
 protected:
 	Singleton();
 };
